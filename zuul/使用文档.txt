@@ -1,0 +1,2 @@
+结合eureka里面的项目，访问gateway项目
+http://localhost:端口号/test12  就能访问到provide-service项目，起到面向服务的网关作用

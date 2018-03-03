@@ -1,5 +1,6 @@
 package com.zfh.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -13,10 +14,13 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class TestController {
 
+    @Autowired
+    private RestTemplate restTemplate;
+
     @RequestMapping(value = "/test")
     public void test() {
-        RestTemplate template = new RestTemplate();
-        template.getForEntity("http://localhost:8000/test",String.class);
+        //template.getForEntity("http://localhost:8000/test",String.class);
+        restTemplate.getForEntity("http://provide-serivce/test",String.class);
     }
 }
 

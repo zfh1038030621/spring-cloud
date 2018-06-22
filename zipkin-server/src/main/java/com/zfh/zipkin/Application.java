@@ -1,30 +1,26 @@
-package com.zfh;
+package com.zfh.zipkin;
 /**
  * @author zhangfanghui
  * @since 2017/9/13
  */
 
-import com.zfh.filter.TestFilter;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
-import org.springframework.context.annotation.Bean;
+import zipkin.server.EnableZipkinServer;
+
 
 @SpringBootApplication
-/*支持网关路由*/
-@EnableZuulProxy
+@EnableZipkinServer
 @EnableEurekaClient
+@EnableAutoConfiguration
 public class Application {
+/*************  访问地址：http://localhost:8888/user/dev  ****************/
+/***************************************/
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
-    }
-
-
-    @Bean
-    public TestFilter testFilter(){
-        return  new TestFilter();
     }
 }
 

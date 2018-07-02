@@ -15,9 +15,12 @@ eureka:
   client:
     service-url:
       ##eureka.client.service-url.defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://zfh:zfh@localhost:8761/eureka/
     #由于注册中心的职责就是维护服务实例，他并不需要去检索服务，所以也设置为false
     #fetch-registry: false
+
+    #注册中心开启认证后，项目中的注册中心地址的配置也需要改变,需要加上认证的用户名和密码
+    #eureka.client.serviceUrl.defaultZone=http://用户名:密码@ip:port/eureka/
 
 
 

@@ -14,7 +14,6 @@ import zipkin.server.EnableZipkinServer;
 @SpringBootApplication
 @EnableZipkinServer
 @EnableEurekaClient
-@EnableAutoConfiguration
 public class Application {
 /*************  访问地址：http://localhost:8888/user/dev  ****************/
 /***************************************/

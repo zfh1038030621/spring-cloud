@@ -3,10 +3,10 @@ spring:
     name: zipkin-server
 server:
   port: 80
-eureka:
-  client:
-    service-url:
-     defaultZone: http://zfh:zfh@localhost:8761/eureka/
+#eureka:
+#  client:
+#    service-url:
+#     defaultZone: http://zfh:zfh@localhost:8761/eureka/
 
 
 

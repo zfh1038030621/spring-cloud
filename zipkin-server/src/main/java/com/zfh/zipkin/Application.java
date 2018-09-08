@@ -5,7 +5,6 @@ package com.zfh.zipkin;
  */
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import zipkin.server.EnableZipkinServer;
@@ -18,7 +17,7 @@ public class Application {
 /*************  访问地址：http://localhost:8888/user/dev  ****************/
 /***************************************/
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, InterruptedException {
         SpringApplication.run(Application.class, args);
     }
 }

@@ -20,7 +20,9 @@ import java.util.List;
 
 @SpringBootApplication
 /*支持网关路由*/
+/* 老版本的是用注解EnableZuulServer，而EnableZuulProxy注解則是增强版的，在之前的基础上又增加了一些过滤器*/
 @EnableZuulProxy
+
 @EnableEurekaClient
 public class Application {
 

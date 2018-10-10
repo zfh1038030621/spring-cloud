@@ -1,8 +1,21 @@
-spring.application.name=eureka-server
-server.port=8761
-e#ureka.environment=dev
+server.port : 8761
+spring.application.name: eureka-server
+
+############### admin 2.0##########################
+spring.boot.admin.client.url: http://localhost:8863
+#默认大部分的endpoint是没有开放，所以要公开这些endpoint
+management.endpoints.web.exposure.include: '*'
+endpoint.health.show-details: ALWAYS
+management:
+  security:
+    enabled: false
+############### admin 2.0##########################
+
+
+
+#eureka.environment=dev
 #注册中心默认端口就是8761，也可通过下面的方式定义其他端口
-eureka.client.serviceUrl.defaultZone=http://zfh:zfh@localhost:8762/eureka/
+eureka.client.serviceUrl.defaultZone: http://zfh:zfh@localhost:8762/eureka/
 
 # 由于该应用为注册中心，所以设置为false，代表不向注册中心注册自己
 #eureka.client.register-with-eureka=false
@@ -22,8 +35,11 @@ eureka.client.serviceUrl.defaultZone=http://zfh:zfh@localhost:8762/eureka/
 
 #eureka 设置安全限制
 #开启认证
-security.basic.enabled=true
+security.basic.enabled: true
 #用户名
-security.user.name=zfh
+security.user.name: zfh
 #密码
-security.user.password=zfh
+security.user.password: zfh
+
+# Enable admin features for the application.
+#spring.application.admin.enabled=false

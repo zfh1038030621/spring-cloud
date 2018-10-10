@@ -21,6 +21,19 @@ eureka:
     #由于注册中心的职责就是维护服务实例，他并不需要去检索服务，所以也设置为false
     #fetch-registry: false
 
+############### admin 2.0##########################
+spring.boot.admin.client.url: http://localhost:8863
+#默认大部分的endpoint是没有开放，所以要公开这些endpoint
+management.endpoints.web.exposure.include: '*'
+endpoint.health.show-details: ALWAYS
+management:
+  security:
+    enabled: false
+  #写入日志文件的目标。启用日志文件执行器端点(值先随便写)
+logging.file: eq
+
+#logging.pattern.file: %clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx
+############### admin 2.0##########################
 
 
 

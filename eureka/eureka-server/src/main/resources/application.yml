@@ -6,9 +6,7 @@ spring.boot.admin.client.url: http://localhost:8863
 #默认大部分的endpoint是没有开放，所以要公开这些endpoint
 management.endpoints.web.exposure.include: '*'
 endpoint.health.show-details: ALWAYS
-management:
-  security:
-    enabled: false
+
 
 logging.file: /var/log/sample-boot-application.log
 #logging.pattern.file: %clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx
@@ -37,12 +35,18 @@ eureka.client.serviceUrl.defaultZone: http://zfh:zfh@localhost:8762/eureka/
 #spring.profiles.active=master
 
 #eureka 设置安全限制
-#开启认证
-security.basic.enabled: true
-#用户名
-security.user.name: zfh
-#密码
-security.user.password: zfh
+#Finchley版本开启认证，cam版本就去掉spring，默认是开启的
+management:
+  security:
+    enabled: false
+spring:
+  security:
+    basic:
+      enabled: true
+    user:
+      name: zfh
+      password: zfh
+
 
 # Enable admin features for the application.
 #spring.application.admin.enabled=false

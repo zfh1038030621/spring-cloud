@@ -38,11 +38,12 @@ eureka.client.serviceUrl.defaultZone: http://zfh:zfh@localhost:8762/eureka/
 
 #eureka 设置安全限制
 #开启认证
-security.basic.enabled: true
-#用户名
-security.user.name: zfh
-#密码
-security.user.password: zfh
+spring.security.basic.enabled: true
+spring:
+  security:
+    user:
+      name: zfh
+      password: zfh
 
 # Enable admin features for the application.
 #spring.application.admin.enabled=false

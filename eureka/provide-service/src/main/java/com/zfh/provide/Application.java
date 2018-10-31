@@ -10,8 +10,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableSwagger2
 @EnableEurekaClient
+@EnableSwagger2
 public class Application {
 /*************  访问地址：http://localhost:8888/user/dev  ****************/
 /***************************************/

@@ -6,6 +6,11 @@ spring:
   sleuth:
     sampler:
       percentage: 0.05
+
+swagger:
+  title: provide-service api 文档
+  description: 测试
+  version: 3.0
 server:
   port: 8000
 
